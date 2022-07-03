@@ -37,12 +37,6 @@ namespace WebApiDemo
             var configParser = new ApiWebAppConfigParser(appDir, "WebAppConfig.json", new ApiWebAppResourceBuilder());
             var app = configParser.Parse();
 
-            /* var loginPage = app.ApplicationResources.First(el => el.Name.Contains("login.html"));
-            requestHandler.WebAppSetResourceVisibility(app, loginPage, ApiWebAppResourceVisibility.Public);
-            requestHandler.WebAppSetDefaultPage(app, loginPage);
-            requestHandler.WebAppSetNotAuthorizedPage(app, loginPage);
-            requestHandler.WebAppSetNotFoundPage(app, loginPage);*/
-
             var deployer = serviceFactory.GetApiWebAppDeployer(requestHandler);
             //for a full deploy: requestHandler.WebAppDelete(app);
             while (true)
